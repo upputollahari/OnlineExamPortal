@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <h2>Exam Name: {{examDetails[0].title}}</h2>
+  </div>
+  <form #form="ngForm">
+    <div *ngFor="let question of questions; let i = index">
+      <div class="">
+        <h6>{{ question['que']}}</h6>
+      </div>
+      <mat-radio-group name="answer{{i}}" [(ngModel)]="answer[i]">
+        <mat-radio-button value="option1">{{ question.option1 }}</mat-radio-button>
+        <mat-radio-button value="option2">{{ question.option1 }}</mat-radio-button>
+        <mat-radio-button value="option3">{{ question.option1 }}</mat-radio-button>
+        <mat-radio-button value="option4">{{ question.option1 }}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <button mat-stroked-button type="submit" [disabled]="!form.valid" (click)="onSubmit()" style="width: 100%; text-align: center; font-size: 30px;" color="accent">SUBMIT</button>
+  </form>
+</div>

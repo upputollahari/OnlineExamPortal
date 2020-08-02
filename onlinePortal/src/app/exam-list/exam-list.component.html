@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="text-right">
+    <button class="btn btn-primary" (click)='logOut()'>LogOut</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Subject</th>
+        <th>Total Marks</th>
+        <th>Time(min)</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of allExams;let i =index">
+        <td>{{exam.title}}</td>
+        <td>{{exam.subject}}</td>
+        <td>{{exam.totalMarks}}</td>
+        <td>{{exam.time}}</td>
+        <td><button [routerLink]="['/startExam',exam._id]" class="btn btn-primary">Start exam</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

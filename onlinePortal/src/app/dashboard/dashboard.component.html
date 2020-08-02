@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="text-center cls">
+<h2>All Exams List</h2>
+  </div>
+  <div class="text-right cls">
+    <button type="button" class="btn btn-primary" routerLink="/newExam">Create Exam</button>
+    <button type="button" class="btn btn-primary" routerLink="/attemtedUserList">Users List</button>
+    <button type="button" class="btn btn-primary" (click)='logOut()'>LogOut</button>
+  </div>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Subject</th>
+          <th>Total Marks</th>
+          <th>Time(min)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of allExams;let i =index">
+          <td>{{exam.title}}</td>
+          <td>{{exam.subject}}</td>
+          <td>{{exam.totalMarks}}</td>
+          <td>{{exam.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

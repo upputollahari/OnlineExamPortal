@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="text-right">
+    <button routerLink="/dashboard" class="btn btn-primary">Back</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Title</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of allUsers;let i =index">
+        <td>{{user.email}}</td>
+        <td>{{user.title}}</td>
+        <td>{{user.subject}}</td>
+        <td>{{user.marks}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
